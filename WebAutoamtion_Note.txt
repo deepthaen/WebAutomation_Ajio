@@ -1,0 +1,125 @@
+Framework ::
+    i am using
+    1) Hybrid model
+        page factory - POM (Page object model)
+        method driven + data driven
+        modular driven
+        test driven
+        data driven
+        Behaviour driven
+
+    what design pattern u r using
+        Singleton pattern
+        Page factory
+        Abstract factory
+        builder pattern
+
+    can u explain ur project hirarchy or skeleton
+        Maven Project
+            src/main/java(compile)
+                webDriverManger
+                    capabilities
+                        chrome capabilities
+                        firefoxcapabilites
+                    webManager
+                        DriverController.java(interface)
+                        DriverManager.java(implementation)
+                    pageHelper
+                        webpage.java
+                webutils
+                    models
+                        BROWSERS.java
+                            CHROME,FIREFOX,SAFARI
+                        LOCATORS
+                            ID,XPATH,CSS,NAME
+                common
+                    dataHandling
+                        csv
+                        excel
+                        json
+                        text
+                        propertyReader
+                    Java Util
+                        dateHelper
+                    DbUtils
+                        sql
+                        oracle
+                        mongodb
+                        casandra
+                    Reporting
+                        allure
+                        testngReport
+                        Extentreport
+                        customized report
+                    Listners
+                        WebdriverListner
+                        ItestListners
+                        IReport
+                    logUtil
+                        Log4jHelper
+                        logbackhelper
+
+                webpageHelper
+                    LoginPage.java
+                gloablConfig
+                    DatBaseType.java
+                    TestType
+                    Constants
+                    Environemnt
+                    Testpriority
+            src/main/Test
+                sanity
+                    Login test
+                    Listing test
+                functional
+                Regression
+
+            src/main/resources
+                testData
+                    som.csv
+                    aji.csv
+                drivers
+                    chroem
+                    ojdbc7.0
+                properties
+                    sit.properties
+                    uat.properties
+                    sit.yml
+                    sit.json
+            src/test/resources
+            pom.xml
+            wiki.txt
+            testng.xml
+
+
+
+
+1. Created Maven project
+-- created hirarchy
+-- added dependicies
+    selenium web - 3.4
+    testng 6.14.3
+-- added testng to project module
+-- driver implementation
+    driver = getWebDriver();
+-- webPage implemetation extends (DriverImplementation)
+    constructor(){ driver = getWebDriver();}
+    click(WebElemnt elemebnt)
+-- Basetest
+    @BeforeNethod (getWebdriever() implicti() Maximise())
+    @After(Quit())
+-- LoginPage extends(WebPageImplemetATION)
+    constructor(driver = getWebdriver() and  PageFactory.initElements(driver,this))
+    @FindBy(login)
+    clickonLogin()
+-- Login Test  extends Basetest
+    @test
+        getUrl();
+        login.clickonLogin();
+        sleepfor();
+-- PropertyReader
+    getValue(Striong key)
+        file p[ath
+        load property
+        prop.getProperty(key);
+
